@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 17 déc. 2017 à 01:24
+-- Généré le :  Dim 17 déc. 2017 à 13:17
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `hoteldb`
+-- Base de données :  `hotel_db`
 --
 
 -- --------------------------------------------------------
@@ -54,21 +54,21 @@ INSERT INTO `bookings` (`id`, `room_id`, `customer_id`, `start_date`, `end_date`
 -- --------------------------------------------------------
 
 --
--- Structure de la table `countrys`
+-- Structure de la table `countries`
 --
 
-DROP TABLE IF EXISTS `countrys`;
-CREATE TABLE IF NOT EXISTS `countrys` (
+DROP TABLE IF EXISTS `countries`;
+CREATE TABLE IF NOT EXISTS `countries` (
   `id` int(50) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `country` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `countrys`
+-- Déchargement des données de la table `countries`
 --
 
-INSERT INTO `countrys` (`id`, `country`) VALUES
+INSERT INTO `countries` (`id`, `name`) VALUES
 (1, 'France'),
 (2, 'England'),
 (3, 'Spain'),
@@ -174,7 +174,7 @@ ALTER TABLE `bookings`
 -- Contraintes pour la table `customers`
 --
 ALTER TABLE `customers`
-  ADD CONSTRAINT `customers_ibfk_1` FOREIGN KEY (`country_id`) REFERENCES `countrys` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `customers_ibfk_1` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `rooms`
