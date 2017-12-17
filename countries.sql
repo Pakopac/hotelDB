@@ -1,4 +1,4 @@
 SELECT
-    `name`
+    `name` AS 'country'
 FROM
     `countries`
