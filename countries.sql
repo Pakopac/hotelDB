@@ -1,1 +1,4 @@
-SELECT name FROM countries
+SELECT
+    `name`
+FROM
+    `countries`
