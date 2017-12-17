@@ -4,8 +4,8 @@ SELECT
     `bookings`.`end_date`,
     `rooms`.`number` AS 'room_number',
     `rooms`.`price_for_a_night`,
-    `customers`.`firstname`,
-    `customers`.`lastname`,
+    `customers`.`firstname` AS  'customer_firstname',
+    `customers`.`lastname` AS  'customer_lastname',
     `customers`.`phone_number` AS 'customer_phone_number'
 FROM
     `bookings`
